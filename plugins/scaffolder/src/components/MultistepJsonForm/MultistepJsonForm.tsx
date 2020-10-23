@@ -95,7 +95,13 @@ export const MultistepJsonForm = ({
         <Content>
           <Paper square elevation={0}>
             <Typography variant="h6">Review and create</Typography>
-            <StructuredMetadataTable dense metadata={formData} />
+            <StructuredMetadataTable
+              dense
+              metadata={{
+                ...formData,
+                use_typescript: formData.use_typescript ? 'Yes' : 'No',
+              }}
+            />
             <Box mb={4} />
             <Button onClick={handleBack}>Back</Button>
             <Button onClick={handleReset}>Reset</Button>
